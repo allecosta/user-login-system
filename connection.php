@@ -70,8 +70,41 @@ $conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
 			mysql_query($conn, $query);
 
 			$_POST['usuario'] = $username;
-			$_POST['success'] = "Você está logado";
+			$_POST['success'] = "Você está logado!";
 
 			header('Location: index.php');
 		}
 	}
+
+		// login do usuário
+		if (isset($_POST['login_user'])) {
+
+			$username = mysqli_real_escape_string($conn, $_POST['usuario']);
+			$password = mysqli_real_escape_string($conn, $_POST['senha']);
+
+			if (empty($username)) {
+
+				array_push($errors, "É necessário informar o nome de usuário");
+			}
+
+			if (empty($password)) {
+
+				array_push($errors, "É necessário informar a senha de login")
+			}
+
+			if (count($errors) == 0) {
+
+				$password = md5($password);
+				$query = "SELECT * FROM users WHERE usuario='$username' AND senha='$password'";
+				$result = mysqli_query($conn, $query);
+
+				if (mysqli_num_rows($result) == 1) {
+					$_SESSION['usuario'] = $username;
+					$_SESSION['success'] = "Você está logado!";
+
+				} else {
+
+					array_push($erros, "Erro! Usuário/senha incorreto.")
+				}
+			}
+		}
