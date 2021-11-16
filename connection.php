@@ -37,7 +37,7 @@ $conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
 
 		if ($passwordOne != $passwordTwo) {
 
-			array_push($errors, "As senhas não correspondem, favor verificar!")
+			array_push($errors, "As senhas não correspondem, favor verificar!");
 		}
 
 		// verificação no database se o usuario não existe com o mesmo nome e/ou email
@@ -67,7 +67,7 @@ $conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
 
 			$query = "INSERT INTO users (usuario, email, senha) VALUES ('$username', '$email', '$password')";
 			
-			mysql_query($conn, $query);
+			mysqli_query($conn, $query);
 
 			$_POST['usuario'] = $username;
 			$_POST['success'] = "Você está logado!";
@@ -89,7 +89,7 @@ $conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
 
 			if (empty($password)) {
 
-				array_push($errors, "É necessário informar a senha de login")
+				array_push($errors, "É necessário informar a senha de login");
 			}
 
 			if (count($errors) == 0) {
@@ -104,7 +104,7 @@ $conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
 
 				} else {
 
-					array_push($erros, "Erro! Usuário/senha incorreto.")
+					array_push($erros, "Erro! Usuário/senha incorreto.");
 				}
 			}
 		}
