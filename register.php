@@ -1,6 +1,6 @@
 <?php
 
-include('server.php'); 
+include('connection.php'); 
 
 ?>
 
@@ -8,13 +8,13 @@ include('server.php');
 <html>
 
 <head>
-	<title>Connection</title>
+	<title>Registre</title>
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 
 <body>
 	<div class="header">
-		<h2>Registre</h2>
+		<h2>Registre-se</h2>
 	</div>
 
 	<form method="POST" action="register.php">
@@ -30,12 +30,16 @@ include('server.php');
 			<input type="text" name="usuario" value="<?php echo $username; ?>">
 		</div>
 		<div class="input-group">
+			<label>Email </label>
+			<input type="email" name="email" value="<?php echo $email; ?>">
+		</div>
+		<div class="input-group">
 			<label>Senha </label>
-			<input type="password" name="passwordOne">
+			<input type="password" name="senha1">
 		</div>
 		<div class="input-group">
 			<label>Confirme a senha </label>
-			<input type="password" name="passwordTwo">
+			<input type="password" name="senha2">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="reg_user">Registre</button>
