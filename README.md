@@ -14,7 +14,6 @@
 Crie um banco de dados e execute as instruções SQLs abaixo para criar a tabela `users`:
 
 ```
-  
   CREATE TABLE users (
 	id int(11) not null auto_increment,
     usuario varchar(120) not null,
@@ -22,12 +21,11 @@ Crie um banco de dados e execute as instruções SQLs abaixo para criar a tabela
     senha varchar(120) not null,
     primary key(id)
 )
-
 ```
 ---
 
 <h4 align="left">
-  Caso o usuário ainda não possua cadastro, o mesmo é direcionado para tela de registre-se.
+  Caso o usuário ainda não possua cadastro, o mesmo é direcionado para tela de Registre-se.
 </h4>
 
 ![Resultado de momento do projeto](assets/registre.png)
