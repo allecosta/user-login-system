@@ -8,7 +8,7 @@ $email = "";
 $errors = array();
 
 // conexao com o database
-$conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
+$conn = mysqli_connect('localhost', '', '', '');
 
 	// registro de usuario
 	if (isset($_POST['reg_user'])) {
@@ -19,7 +19,7 @@ $conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
 		$passwordOne = mysqli_real_escape_string($conn, $_POST['senha1']);
 		$passwordTwo = mysqli_real_escape_string($conn, $_POST['senha2']);
 
-		// validição de formulário para garantir que o formulário esteja corretamente preenchido
+		// validação de formulário para garantir que esteja corretamente preenchido
 		if (empty($username)) {
 
 			array_push($errors, "É necessário informar o nome de usuário");
@@ -55,7 +55,7 @@ $conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
 
 			if ($user['email'] === $email) {
 
-				array_push($errors, "Email já existe!");
+				array_push($errors, "Este endereço de email já existe!");
 			}
 		}
 
@@ -104,7 +104,7 @@ $conn = mysqli_connect('localhost', 'root', 'matrix0101', 'db_registro');
 
 				} else {
 
-					array_push($erros, "Erro! Usuário/senha incorreto.");
+					array_push($errors, "Erro! Usuário/senha incorreto");
 				}
 			}
 		}
