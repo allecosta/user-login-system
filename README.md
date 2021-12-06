@@ -38,7 +38,7 @@ Crie um banco de dados e execute as instruções SQLs abaixo para criar a tabela
 
 ---
 
-## Tecnologias e ferrametas utilizadas
+## Tecnologias e ferramentas utilizadas
 Para o desenvolvimento deste projeto utilizei:
 
 - PHP 8.0.12
